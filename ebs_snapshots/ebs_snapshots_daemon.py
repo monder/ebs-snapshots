@@ -8,8 +8,8 @@ from boto import ec2
 import kayvee
 import logging
 
-aws_access_key_id = os.environ['AWS_ACCESS_KEY_ID']
-aws_secret_access_key = os.environ['AWS_SECRET_ACCESS_KEY']
+aws_access_key_id = os.environ['AWS_ACCESS_KEY_ID'] if os.environ.has_key('AWS_ACCESS_KEY_ID') else None
+aws_secret_access_key = os.environ['AWS_SECRET_ACCESS_KEY'] if os.environ.has_key('AWS_SECRET_ACCESS_KEY') else None
 aws_region = os.environ['AWS_REGION']
 config_path = os.environ['BACKUP_CONFIG']
 
